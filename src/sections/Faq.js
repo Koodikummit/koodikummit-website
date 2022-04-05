@@ -15,9 +15,9 @@ const list = [
 
 const Faq = () => {
   return (
-    <Grid container spacing={2}>
+    <Grid id="faq" container spacing={2}>
       <Grid item xs={8}>
-        Otsikko
+        <h1> Fequently asked questions</h1>
       </Grid>
       <Grid item xs={6}>
         <Accordion list={list} />

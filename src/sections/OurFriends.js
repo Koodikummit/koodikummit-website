@@ -6,9 +6,11 @@ const Section = styled.section`
 `;
 
 const OurFriends = () => (
+    <div id="ourfriends">
     <Section>
         <Hero />
     </Section>
+    </div>
 )
 
 export default OurFriends

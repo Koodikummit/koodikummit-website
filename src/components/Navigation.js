@@ -12,6 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import KoodikummitLogo from "../assets/koodikummit-logo.svg"
 
 const pages = [
   { label: 'Main', id: '#main' },
@@ -19,7 +20,7 @@ const pages = [
   { label: 'Our friends', id: '#ourfriends' },
   { label: 'For companies', id: '#forcompanies' },
   { label: 'FAQ', id: '#faq' },
-  { label: 'Contact', id: '#contact' }
+  { label: 'Contact', id: '#contactus' }
 ];
 
 const ResponsiveAppBar = () => {
@@ -42,7 +43,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky" color="">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -51,7 +52,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            <KoodikummitLogo />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -84,7 +85,7 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <Scrollchor id={page.id}>
+                <Scrollchor to={page.id}>
                   <MenuItem key={page.label} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page.label}</Typography>
                   </MenuItem>
@@ -102,15 +103,15 @@ const ResponsiveAppBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <Scrollchor to={page.id}>
               <Button
                 key={page.label}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                <Scrollchor id={page.id}>
-                  {page.label}
-                </Scrollchor>
+                  {page.label} 
               </Button>
+              </Scrollchor>
             ))}
           </Box>
         </Toolbar>
