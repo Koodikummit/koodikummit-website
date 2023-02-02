@@ -10,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
   }
 
+  a:link {
+    text-decoration: none;
+  }
 `
 
 export default GlobalStyle
