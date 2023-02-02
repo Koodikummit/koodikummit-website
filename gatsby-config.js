@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Koodikummit`,
@@ -23,6 +27,16 @@ module.exports = {
         display: 'swap'
       }
     },
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        accessToken: process.env.ACCESS_TOKEN,
+        spaceId: process.env.SPACE_ID,
+        host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com'
+      },
+    },
+
+    "gatsby-plugin-image",
 
   ]
 };

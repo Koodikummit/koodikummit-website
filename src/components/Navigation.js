@@ -23,7 +23,7 @@ const pages = [
   { label: 'Contact', id: '#contactus' }
 ];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = ({sections}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -84,12 +84,14 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <Scrollchor to={page.id}>
-                  <MenuItem key={page.label} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.label}</Typography>
+
+              {sections.map((section) => (
+                <Scrollchor to={section.name}>
+                  <MenuItem key={section.name} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{section.name}</Typography>
                   </MenuItem>
                 </Scrollchor>
+
               ))}
             </Menu>
           </Box>
@@ -102,16 +104,18 @@ const ResponsiveAppBar = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Scrollchor to={page.id}>
+
+            {sections.map((section) => (
+              <Scrollchor to={section.name}>
               <Button
-                key={page.label}
+                key={section.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                  {page.label} 
+                  {section.name} 
               </Button>
               </Scrollchor>
+
             ))}
           </Box>
         </Toolbar>

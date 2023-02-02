@@ -8,14 +8,17 @@ import ForCompanies from "../sections/ForCompanies";
 import Faq from '../sections/Faq';
 import ContactUs from '../sections/ContactUs';
 import GlobalStyle from "../components/globalStyle"
+import { graphql } from 'gatsby'
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const sections = data.allContentfulSection.nodes;
+  
   return (
     <main>
       <GlobalStyle />
       <title>Home Page</title>
-      <Navigation />
+      <Navigation sections={sections} />
       <div>
         <Main />
         <AboutUs />
@@ -29,3 +32,14 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+query MyQuery {
+  allContentfulSection(sort: {order: ASC, fields: order}) {
+    nodes {
+      name
+      order
+    }
+  }
+}
+`
