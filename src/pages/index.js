@@ -1,5 +1,7 @@
 import * as React from "react"
 import { Scrollchor } from 'react-scrollchor';
+import Grid from "@mui/material/Grid";
+import styled from 'styled-components';
 import Navigation from "../components/Navigation";
 import Main from "../sections/Main";
 import AboutUs from "../sections/AboutUs";
@@ -8,9 +10,14 @@ import ForCompanies from "../sections/ForCompanies";
 import Faq from '../sections/Faq';
 import ContactUs from '../sections/ContactUs';
 import GlobalStyle from "../components/globalStyle"
+
 import { graphql } from 'gatsby'
 
-// markup
+const ContentSpacer = styled.div`
+  max-width: 1128px;
+  margin: 0 auto;
+`
+
 const IndexPage = ({ data }) => {
   const sections = data.allContentfulSection.nodes;
   
@@ -19,14 +26,16 @@ const IndexPage = ({ data }) => {
       <GlobalStyle />
       <title>Home Page</title>
       <Navigation sections={sections} />
-      <div>
-        <Main />
-        <AboutUs />
-        <OurFriends />
-        <ForCompanies />
-        <Faq/>
-        <ContactUs />
-      </div>
+      <ContentSpacer>
+        <Grid container spacing={2}>
+          <Main />
+          <AboutUs />
+          <OurFriends />
+          <ForCompanies />
+          <Faq/>
+          <ContactUs />
+        </Grid>
+      </ContentSpacer>
     </main>
   )
 }
