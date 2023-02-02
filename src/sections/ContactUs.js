@@ -35,7 +35,7 @@ width: 470px;
 const ContactUs = () => {
 
   return (
-    <div id="contactus">
+    <div id="contact">
 
       <Title>Do not hesitate to ask a question!</Title>
 

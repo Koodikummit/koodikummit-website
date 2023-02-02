@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ForCompanies = () => (
-  <div id="forcompanies"></div>
+  <div id="for-companies"></div>
 )
 
 export default ForCompanies;
