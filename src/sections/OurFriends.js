@@ -6,7 +6,7 @@ const Section = styled.section`
 `;
 
 const OurFriends = () => (
-    <div id="ourfriends">
+    <div id="our-friends">
     <Section>
         <Hero />
     </Section>

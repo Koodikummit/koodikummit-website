@@ -86,8 +86,8 @@ const ResponsiveAppBar = ({sections}) => {
             >
 
               {sections.map((section) => (
-                <Scrollchor to={section.name}>
-                  <MenuItem key={section.name} onClick={handleCloseNavMenu}>
+                <Scrollchor to={section.slug}>
+                  <MenuItem key={section.slug} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{section.name}</Typography>
                   </MenuItem>
                 </Scrollchor>
@@ -106,9 +106,9 @@ const ResponsiveAppBar = ({sections}) => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 
             {sections.map((section) => (
-              <Scrollchor to={section.name}>
+              <Scrollchor to={section.slug}>
               <Button
-                key={section.name}
+                key={section.slug}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >

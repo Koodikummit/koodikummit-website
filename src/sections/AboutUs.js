@@ -4,7 +4,7 @@ import Title from '../components/Title'
 
 const AboutUs = () => (
   <section>
-    <div id="aboutus">About us</div>
+    <div id="about-us">About us</div>
     <Title>Tell me more about Koodikummit!</Title>
     <div>
       <div></div>

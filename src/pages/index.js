@@ -39,6 +39,7 @@ query MyQuery {
     nodes {
       name
       order
+      slug
     }
   }
 }
