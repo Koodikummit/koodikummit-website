@@ -1,16 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import Hero from "../assets/hero-friends.svg"
+import React from 'react';
 
-const Section = styled.section`
-`;
+import Title from '../components/Title';
+import Hero from '../assets/hero-friends.svg';
 
 const OurFriends = () => (
-    <div id="our-friends">
-    <Section>
-        <Hero />
-    </Section>
-    </div>
-)
+  <section id="our-friends">
+    <Title>Collaboration for common good.</Title>
+    <Hero />
+  </section>
+);
 
-export default OurFriends
+export default OurFriends;

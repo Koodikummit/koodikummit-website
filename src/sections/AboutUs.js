@@ -1,17 +1,25 @@
-import React from 'react'
+import React from 'react';
 
-import Title from '../components/Title'
+import Title from '../components/Title';
+import Hero1 from '../assets/hero-about-1.svg';
+import Hero2 from '../assets/hero-about-2.svg';
+import Hero3 from '../assets/hero-about-3.svg';
 
 const AboutUs = () => (
-  <section>
-    <div id="about-us">About us</div>
+  <section id="about-us">
     <Title>Tell me more about Koodikummit!</Title>
-    <div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div style={{ display: 'flex' }}>
+      <div>
+        <Hero1 />
+      </div>
+      <div>
+        <Hero2 />
+      </div>
+      <div>
+        <Hero3 />
+      </div>
     </div>
   </section>
-)
+);
 
 export default AboutUs;
