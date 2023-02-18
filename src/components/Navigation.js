@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Scrollchor } from 'react-scrollchor';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,7 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import KoodikummitLogo from "../assets/koodikummit-logo.svg"
+import KoodikummitLogo from '../assets/koodikummit-logo.svg';
 
 const pages = [
   { label: 'Main', id: '#main' },
@@ -20,10 +20,10 @@ const pages = [
   { label: 'Our friends', id: '#ourfriends' },
   { label: 'For companies', id: '#forcompanies' },
   { label: 'FAQ', id: '#faq' },
-  { label: 'Contact', id: '#contactus' }
+  { label: 'Contact', id: '#contactus' },
 ];
 
-const ResponsiveAppBar = ({sections}) => {
+const ResponsiveAppBar = ({ sections }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -43,7 +43,11 @@ const ResponsiveAppBar = ({sections}) => {
   };
 
   return (
-    <AppBar position="sticky" color="">
+    <AppBar
+      position="sticky"
+      color=""
+      sx={{ paddingTop: '1rem', paddingBottom: '1rem' }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -52,10 +56,10 @@ const ResponsiveAppBar = ({sections}) => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <KoodikummitLogo />
+            <KoodikummitLogo style={{ height: 75, width: 75 }} />
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { md: 'none' }, position: { xs: 'absolute' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -84,14 +88,12 @@ const ResponsiveAppBar = ({sections}) => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-
               {sections.map((section) => (
                 <Scrollchor to={section.slug}>
                   <MenuItem key={section.slug} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{section.name}</Typography>
                   </MenuItem>
                 </Scrollchor>
-
               ))}
             </Menu>
           </Box>
@@ -99,23 +101,25 @@ const ResponsiveAppBar = ({sections}) => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' },
+              justifyContent: 'center',
+            }}
           >
-            LOGO
+            <KoodikummitLogo style={{ height: 75, width: 75 }} />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-
             {sections.map((section) => (
               <Scrollchor to={section.slug}>
-              <Button
-                key={section.slug}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
-              >
-                  {section.name} 
-              </Button>
+                <Button
+                  key={section.slug}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, mx: 2, color: 'black', display: 'block' }}
+                >
+                  {section.name}
+                </Button>
               </Scrollchor>
-
             ))}
           </Box>
         </Toolbar>
