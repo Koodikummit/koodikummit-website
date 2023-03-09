@@ -1,12 +1,13 @@
 import React from 'react';
 
-import Title from '../components/Title';
+import Title from '../components/common/Title';
+import SectionContainer from '../components/common/SectionContainer';
 import Hero1 from '../assets/hero-about-1.svg';
 import Hero2 from '../assets/hero-about-2.svg';
 import Hero3 from '../assets/hero-about-3.svg';
 
 const AboutUs = () => (
-  <section id="about-us">
+  <SectionContainer id="about-us">
     <Title>Tell me more about Koodikummit!</Title>
     <div style={{ display: 'flex' }}>
       <div>
@@ -19,7 +20,7 @@ const AboutUs = () => (
         <Hero3 />
       </div>
     </div>
-  </section>
+  </SectionContainer>
 );
 
 export default AboutUs;

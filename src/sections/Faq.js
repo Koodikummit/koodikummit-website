@@ -2,7 +2,8 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 
 import Accordion from '../components/Accordion';
-import Title from '../components/Title';
+import Title from '../components/common/Title';
+import SectionContainer from '../components/common/SectionContainer';
 import Hero from '../assets/hero-faq.svg';
 
 const list = [
@@ -18,7 +19,7 @@ const list = [
 
 const Faq = () => {
   return (
-    <section>
+    <SectionContainer>
       <Grid id="faq" container spacing={2}>
         <Grid item xs={8}>
           <Title> Frequently asked questions.</Title>
@@ -30,7 +31,7 @@ const Faq = () => {
           <Hero />
         </Grid>
       </Grid>
-    </section>
+    </SectionContainer>
   );
 };
 

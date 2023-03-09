@@ -1,13 +1,14 @@
 import React from 'react';
 
-import Title from '../components/Title';
+import Title from '../components/common/Title';
+import SectionContainer from '../components/common/SectionContainer';
 import Hero from '../assets/hero-friends.svg';
 
 const OurFriends = () => (
-  <section id="our-friends">
+  <SectionContainer id="our-friends">
     <Title>Collaboration for common good.</Title>
     <Hero />
-  </section>
+  </SectionContainer>
 );
 
 export default OurFriends;

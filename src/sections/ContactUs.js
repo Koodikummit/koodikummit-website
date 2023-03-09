@@ -2,7 +2,8 @@ import React from 'react';
 
 import Contact from '../components/Contact';
 import HeroContact from '../assets/hero-contact.svg';
-import Title from '../components/Title';
+import Title from '../components/common/Title';
+import SectionContainer from '../components/common/SectionContainer';
 
 import styled from 'styled-components';
 
@@ -34,7 +35,7 @@ const SvgContainer = styled.div`
 
 const ContactUs = () => {
   return (
-    <section id="contact-us">
+    <SectionContainer id="contact-us">
       <Title>Do not hesitate to ask a question!</Title>
 
       <Flex>
@@ -47,7 +48,7 @@ const ContactUs = () => {
           <HeroContact height="100%" width="100%" />
         </SvgContainer>
       </Flex>
-    </section>
+    </SectionContainer>
   );
 };
 

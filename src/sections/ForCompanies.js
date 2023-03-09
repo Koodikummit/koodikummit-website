@@ -1,20 +1,21 @@
-import React from 'react'
+import React from 'react';
 import { Grid } from '@mui/material';
 import styled from 'styled-components';
-import Title from '../components/Title';
+import Title from '../components/common/Title';
+import SectionContainer from '../components/common/SectionContainer';
 import HeroCompanies from '../assets/hero-companies.svg';
 
 const SvgContainer = styled.div`
-height: 470px;
-width: 470px;
-@media (max-width: 768px) {
-  height: 220px;
-  width: 220px;
-}
-`
+  height: 470px;
+  width: 470px;
+  @media (max-width: 768px) {
+    height: 220px;
+    width: 220px;
+  }
+`;
 
 const ForCompanies = () => (
-  <section id="for-companies">
+  <SectionContainer id="for-companies">
     <Grid container spacing={2}>
       <Title>How does this affect our company?</Title>
       <Grid item sm={6}>
@@ -26,7 +27,7 @@ const ForCompanies = () => (
         </SvgContainer>
       </Grid>
     </Grid>
-  </section>
-)
+  </SectionContainer>
+);
 
 export default ForCompanies;
