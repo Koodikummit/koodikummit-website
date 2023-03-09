@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -13,6 +13,6 @@ const GlobalStyle = createGlobalStyle`
   a:link {
     text-decoration: none;
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

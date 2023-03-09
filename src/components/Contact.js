@@ -1,27 +1,27 @@
-import React from "react";
-import validator from "validator";
-import {toast} from "react-toastify";
+import React from 'react';
+import validator from 'validator';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
 
 const Contact = () => {
-  const [emailError, setEmailError] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [question, setQuestion] = React.useState("");
+  const [emailError, setEmailError] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [question, setQuestion] = React.useState('');
 
   const validateEmail = (email) => {
     let emailInputText = email.target.value;
     if (validator.isEmail(emailInputText)) {
-      setEmailError("Valid Email :)");
+      setEmailError('Valid Email :)');
       setEmail(emailInputText);
     } else {
-        if (emailInputText === "") {
-            setEmailError("");
-        } else {
-            setEmailError("Please enter a valid email: someName@some-domain.com");
-        }
+      if (emailInputText === '') {
+        setEmailError('');
+      } else {
+        setEmailError('Please enter a valid email: someName@some-domain.com');
+      }
     }
   };
 
@@ -31,7 +31,6 @@ const Contact = () => {
         `Your question has been submitted:\n${name} ${email} ${question}`
       );
     } else {
-
     }
   };
 
@@ -39,13 +38,13 @@ const Contact = () => {
     <form onSubmit={handleSubmit}>
       <div
         style={{
-          marginTop: ".5rem",
+          marginTop: '.5rem',
         }}
       >
         <label
           for="name"
           style={{
-            fontWeight: "bold",
+            fontWeight: 'bold',
           }}
         >
           Your name:&nbsp;
@@ -60,13 +59,13 @@ const Contact = () => {
 
       <div
         style={{
-          marginTop: ".5rem",
+          marginTop: '.5rem',
         }}
       >
         <label
           for="userEmail"
           style={{
-            fontWeight: "bold",
+            fontWeight: 'bold',
           }}
         >
           Your email:&nbsp;
@@ -78,16 +77,16 @@ const Contact = () => {
         />
         <span
           style={{
-            fontWeight: "bold",
-            color: "red",
+            fontWeight: 'bold',
+            color: 'red',
           }}
         >
           {emailError}
         </span>
       </div>
 
-      <div style={{ marginTop: ".5rem" }}>
-        <label for="question" style={{ fontWeight: "bold" }}>
+      <div style={{ marginTop: '.5rem' }}>
+        <label for="question" style={{ fontWeight: 'bold' }}>
           Your Question:&nbsp;
         </label>
         <textarea
@@ -100,7 +99,7 @@ const Contact = () => {
 
       <div
         style={{
-          marginTop: ".5rem",
+          marginTop: '.5rem',
         }}
       >
         <button onSubmit={handleSubmit}>Send</button>
